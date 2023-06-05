@@ -1,0 +1,21 @@
+<div>
+  <ng-container *ngIf="resultWrappers?.length > 0">
+    <div class="container">
+      <h2>Already converted values : </h2>
+      <div *ngFor="let result of resultWrappers">
+        <ng-container *ngIf="!result.error" class="alert alert-success" role="alert">
+          <div class="alert alert-success" role="alert">
+            {{result.inputNumber}} and the result is {{result.result.result}}
+          </div>
+        </ng-container>
+        <ng-container *ngIf="result.error">
+          <div class="alert alert-danger" role="alert">
+            {{result.inputNumber}} and an error is raised {{result.error}}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+  <app-kata-for-fun-form></app-kata-for-fun-form>
+</div>

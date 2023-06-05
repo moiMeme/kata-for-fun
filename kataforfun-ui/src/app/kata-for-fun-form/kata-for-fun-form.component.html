@@ -1,0 +1,11 @@
+<div class="container">
+  <form [formGroup]="inputNumberForm" (ngSubmit)="submitNumber()">
+    <div class="form-group">
+      <label for="inputNumber">Number to convert: </label>
+      <input id="inputNumber" type="number" class="form-control" formControlName="inputNumber" placeholder="InputNumber"
+             aria-describedby="numberInputHelp" required>
+      <small id="numberInputHelp" class="form-text text-muted">Try to give a valid number to be converted</small>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!inputNumberForm.valid">Convert</button>
+  </form>
+</div>
